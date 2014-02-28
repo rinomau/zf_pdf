@@ -17,7 +17,7 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
         }
     }
 } else {
-	die('file non caricato');
+	die('File non caricato');
 }
 
 // $filename = 'testo_check_radio_ok.pdf';
@@ -34,7 +34,7 @@ echo 'Elenco dei campi trovati nel file '. $filename .': '. "<br>\n";
 $lista = 'array(';
 foreach ($pdf->_formFields as $nome => $campo) {
 	echo '<tr>';
-	echo '<td>'.$nome.'</td><td>'.$campo->FT->value.'</td>';
+	echo '<td>'.$nome.'</td><td>'.$campo->FT->value.' '.decbin($campo->Ff->value).'</td>';
 	echo '</tr>';
 	$lista .= "'".$nome."' => '',\n";
 }
